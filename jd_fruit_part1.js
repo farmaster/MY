@@ -10,8 +10,9 @@
 ==========================Quantumultx=========================
 [task_local]
 #jd免费水果
-44 09,16,18  * * * jd_fruit.js, tag=东东农场1, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdnc.png, enabled=true
-
+44 09,16,18 * * * jd_fruit.js, tag=东东农场1 img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdnc.png, enabled=true
+[Script]
+cron "44 09,16,18 * * *" script-path=jd_pet.js,tag=东东农场1
 
 */
 const $ = new Env('东东农场1');
