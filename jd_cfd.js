@@ -1,7 +1,7 @@
 /*
-  https://st.jingxi.com/fortune_island/index2.html
 
-  18 0,6-23/2 * * * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_wealth_island.js 财富岛
+cron "18 0,6-23/3 * * *" script-path=jd_fruit.js,tag=东东农场
+ 
 
 */
 
