@@ -2,9 +2,8 @@
 东东水果:脚本更新地址 jd_fruit.js
 更新时间：2021-11-7
 活动入口：京东APP我的-更多工具-东东农场
-[task_local]
-01 6-18/6  * * * jd_fruit.js, tag=东东农场
-
+[Script]
+cron "2 6-18/6 * * *" script-path=jd_fruit.js,tag=东东农场
 */
 const $ = new Env('东东农场');
 let cookiesArr = [], cookie = '', jdFruitShareArr = [], isBox = false, notify, newShareCodes, allMessage = '';
