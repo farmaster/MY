@@ -323,11 +323,11 @@ function safeGet(data) {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `http://transfer.nz.lu/health`, timeout: 10000}, (err, resp, data) => {
+    $.get({url: `http://transfer.nz.lu/health`, timeout: 1}, (err, resp, data) => {
       try {
         if (err) {
-          console.log(JSON.stringify(err))
-          console.log(`${$.name} health/read API请求失败，请检查网路重试`)
+         // console.log(JSON.stringify(err))
+          console.log(`助力池网址错误`)
         } else {
           if (data) {
          //   console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
