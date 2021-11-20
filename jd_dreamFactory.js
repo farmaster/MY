@@ -11,11 +11,17 @@
 ============Quantumultx===============
 [task_local]
 #京喜工厂
-10 */3 * * * jd_dreamFactory.js, tag=京喜工厂, img-url=https://github.com/58xinian/icon/raw/master/jdgc.png, enabled=true
+10 * * * * jd_dreamFactory.js, tag=京喜工厂, img-url=https://github.com/58xinian/icon/raw/master/jdgc.png, enabled=true
 
 ================Loon==============
 [Script]
 cron "10 */3 * * *" script-path=jd_dreamFactory.js,tag=京喜工厂
+
+===============Surge=================
+京喜工厂 = type=cron,cronexp="10 * * * *",wake-system=1,timeout=3600,script-path=jd_dreamFactory.js
+
+============小火箭=========
+京喜工厂 = type=cron,script-path=jd_dreamFactory.js, cronexpr="10 * * * *", timeout=3600, enable=true
 
  */
 // prettier-ignore
@@ -1353,7 +1359,7 @@ function readShareCode() {
       try {
         if (err) {
        // console.log(JSON.stringify(err))
-      //    console.log(`助力池网址错误！`)
+       //   console.log(`助力池网址错误！`)
         } else {
           if (data) {
           console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
