@@ -1295,7 +1295,7 @@ function readShareCode() {
       try {
         if (err) {
        //   console.log(JSON.stringify(err))
-        console.log(`互助池网址错误！`)
+     //   console.log(`互助池网址错误！`)
        } else {
           if (data) {
          console.log(`随机取个${randomCount}码放到您固定的互助码后面(不影响已有固定互助)`)
