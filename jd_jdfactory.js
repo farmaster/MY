@@ -10,10 +10,8 @@ Last Modified time: 2020-12-26 22:58:02
 已支持IOS双京东账号,Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 ============Quantumultx===============
-[task_local]
-#东东工厂
-10 */3 * * * jd_jdfactory.js, tag=东东工厂, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_factory.png, enabled=true
-
+[Script]
+cron "10 * * * *" script-path=jd_jdfactory.js,tag=东东工厂
  */
 const $ = new Env('东东工厂');
 
