@@ -1,7 +1,6 @@
 /*
 
 cron "18 0,6-23/3 * * *" script-path=jd_fruit.js,tag=东东农场
- 
 
 */
 
