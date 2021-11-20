@@ -612,7 +612,7 @@ function readShareCode() {
       try {
         if (err) {
        // console.log(JSON.stringify(err))
-       console.log(`助力池网址获取错误！`)
+   //  console.log(`助力池网址获取错误！`)
         } else {
           if (data) {
           console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
