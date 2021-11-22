@@ -925,9 +925,9 @@ async function receiveFriendInvite() {
       continue
     }
     await inviteFriend(code);
-   console.log(`接收邀请成为好友结果:${JSON.stringify($.inviteFriendRes)}`)
+//   console.log(`接收邀请成为好友结果:${JSON.stringify($.inviteFriendRes)}`)
     if ($.inviteFriendRes && $.inviteFriendRes.helpResult && $.inviteFriendRes.helpResult.code === '0') {
-   //   console.log(`接收邀请成为好友结果成功,您已成为${$.inviteFriendRes.helpResult.masterUserInfo.nickName}的好友`)
+     console.log(`接收邀请成为好友结果成功,您已成为${$.inviteFriendRes.helpResult.masterUserInfo.nickName}的好友`)
     } else if ($.inviteFriendRes && $.inviteFriendRes.helpResult && $.inviteFriendRes.helpResult.code === '17') {
     //  console.log(`接收邀请成为好友结果失败,对方已是您的好友`)
     }
