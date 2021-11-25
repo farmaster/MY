@@ -1,4 +1,5 @@
 /*
+更新地址https://github.com/farmaster/my/blob/main/master/aqc.js
 cron: 37 8,16,21 * * *
 new Env('爱企查e卡监控');
 */
