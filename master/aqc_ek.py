@@ -51,5 +51,5 @@ def get_status():
         print('E卡无货')
         #plus('爱企查E卡监控', '爱企查京东e卡无货')
 if __name__ == '__main__':
-    PUSH_TOKEN = '6b01cfab54834f07a83b4852ff0f9e31'
+    PUSH_TOKEN = ''
     get_status()
