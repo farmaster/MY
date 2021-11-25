@@ -6,5 +6,5 @@
 ql raw https://github.com/farmaster/my/blob/main/master/aqc.js
 
 爱企查e卡监控
-ql raw https://raw.githubusercontent.com/farmaster/my/main/master/aqc_ck.py
+ql raw https://github.com/farmaster/my/blob/main/master/aqc_ek.py
 ```
