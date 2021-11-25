@@ -45,7 +45,7 @@ def get_status():
       'Referer': f'https://aiqicha.baidu.com/m/usercenter/exchangeList?VNK={randomstr(8)}'
     }
     if get(url, headers=headers).json()['data']['AQ03008'] == 1:
-        print('e卡有货')
+        print('E卡有货')
         plus('爱企查E卡监控', '爱企查京东e卡有货')
     else:
         print('E卡无货')
