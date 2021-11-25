@@ -190,18 +190,16 @@ async function dotask(taskList) {
         );
         await sleep(radomTimers());
         break;
-      
+      /*
       case "CX11010": //批量查询
         console.log("开始任务：" + oo[o.title]);
         await get(
-          `batchquery/show?exportkey=${exportkey`,
+          `batchquery/show?exportkey=${exportkey}`,
           "get"
-        );else {
-                    Log('    配置 exportkey 后可执行批量查询任务！');
-                }
+        );
         await sleep(radomTimers());
         break;
-      
+      */
       case "CX12001": //添加监控
         console.log("开始任务：" + oo[o.title]);
         for (id of [
@@ -261,7 +259,7 @@ async function dotask(taskList) {
                     await get(`smart/questionDetailAjax?nid=${nid}`);
                 }
                 break;
-				
+				/*
 				case 'CX12011': //点赞观点
                 console.log('开始任务：' + oo[o.title]);
                 nid = nid ? nid : '1851233986328193016';
@@ -273,7 +271,7 @@ async function dotask(taskList) {
                     await get(`smart/updownAjax?undoType=0&clientType=app&nid=${nid}&parentId=${pid}`);
                 }
                 break;
-	
+	*/
       default:
         break;
     }
