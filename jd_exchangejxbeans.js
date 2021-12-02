@@ -77,7 +77,7 @@ async function domain() {
                 let jxbeans = await exchangejxbeans(expirebeans);
                 if (jxbeans) {
                     console.log(`成功兑换喜豆${expirebeans}！`);
-                    message += `\n【京东账号${$.index}】${$.nickName || $.UserName}\n成功兑换喜豆${expirebeans}！`
+                    message += `\n【京东账号${$.index}】${$.nickName || $.UserName}\n成功兑换喜豆${expirebeans}个`
                 }
             } else {
                 console.log(`默认每次最多兑换${maxexchange}豆子`)
