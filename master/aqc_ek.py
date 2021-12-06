@@ -1,7 +1,7 @@
 #爱企查京东e卡库存监控
 #push推送，适用于青龙面板
 '''
-cron: 1 * * * *
+cron: 10 * * * *
 new Env('爱企查e卡监控');
 '''
 from requests import get, post
