@@ -17,7 +17,7 @@ def logout(self):
 
 # push推送
 PUSH_PLUS_TOKEN = ''
-QYWX_KEY = '4df16971-ed23-4549-ac1f-b79b55d19333'
+QYWX_KEY = ''
 
 def push_plus_bot(title, content):
     try:
