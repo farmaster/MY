@@ -1,7 +1,7 @@
 #爱企查京东e卡库存监控
-#push推送，适用于青龙面板
+#企业微信机器人、push推送，适用于青龙面板
 '''
-cron: 10 * * * *
+cron: 1 * * * *
 new Env('爱企查e卡监控');
 '''
 from requests import get, post
@@ -13,7 +13,10 @@ def get_ua(brower_name):
     url = 'https://ghproxy.com/https://raw.githubusercontent.com/farmaster/my/main/master/user-agent.json'
     useragent = choice(get(url).json()[brower_name])
     return useragent
-        
+    
+    
+
+       
 def plus(title, content):
     try:
         url = 'http://www.pushplus.plus/send'
@@ -26,12 +29,24 @@ def plus(title, content):
         headers = {'Content-Type': 'application/json'}
         response = requests.post(url=url, data=body, headers=headers).json()
         if response['code'] == 200:
-            print('推送成功！')
+            print('这是一条通知哦，貌似成功了！')
         else:
-            print('推送失败！')
+            print('消息发送失败，请检查配置文件！')
     except Exception as e:
         print(e)
-
+        
+def qyw(title, content):
+    url = f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={QYWX_KEY}'
+    headers = {'Content-Type': 'application/json;charset=utf-8'}
+    data = {
+        'msgtype': 'text',
+        'text': {'content': f'{title}\n\n{content}'}
+    }
+    response = requests.post(url=url, data=json.dumps(data), headers=headers, timeout=15).json()
+    if response['errcode'] == 0:
+       print('这是一条通知哦，貌似成功了！')
+    else:
+       print('消息发送失败，请检查配置文件！')
  
 def randomstr(numb):
     str = ''
@@ -45,11 +60,15 @@ def get_status():
       'Referer': f'https://aiqicha.baidu.com/m/usercenter/exchangeList?VNK={randomstr(8)}'
     }
     if get(url, headers=headers).json()['data']['AQ03008'] == 1:
-        print('E卡有货')
-        plus('爱企查E卡监控', '爱企查京东e卡有货')
+        print('e卡有货')
+        qyw('爱企查E卡监控', '爱企查京东e卡有货')
+        #plus('爱企查E卡监控', '爱企查京东e卡有货')
     else:
         print('E卡无货')
         #plus('爱企查E卡监控', '爱企查京东e卡无货')
+        #qyw('爱企查E卡监控', '爱企查京东e卡无货')
+        
 if __name__ == '__main__':
     PUSH_TOKEN = ''
+    QYWX_KEY = ''
     get_status()
