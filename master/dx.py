@@ -17,6 +17,7 @@ def logout(self):
 
 # push推送
 PUSH_PLUS_TOKEN = ''
+#企业机器人推送
 QYWX_KEY = ''
 
 def push_plus_bot(title, content):
