@@ -105,5 +105,5 @@ if __name__ == '__main__':
         msg += telecom_task(phoneNum)
         index += 1
    # push_plus_bot("电信签到结果：", msg)
-    qyx("电信签到结果：", msg)
+    qyw("电信签到结果：", msg)
     print(msg)
