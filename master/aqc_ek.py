@@ -1,5 +1,6 @@
 #爱企查京东e卡库存监控
 #调用系统自带推送，适用于青龙面板
+#库地址https://github.com/farmaster/my/blob/main/master/aqc_ek.py
 '''
 cron: 10 * * * *
 new Env('爱企查e卡监控');
