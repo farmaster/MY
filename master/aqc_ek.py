@@ -1,5 +1,5 @@
 #爱企查京东e卡库存监控
-#企业微信机器人、push推送，适用于青龙面板
+#调用系统自带推送，适用于青龙面板
 '''
 cron: 10 * * * *
 new Env('爱企查e卡监控');
@@ -9,45 +9,12 @@ from random import choice
 import os
 import json
 import requests
-def get_ua(brower_name):
-    url = 'https://ghproxy.com/https://raw.githubusercontent.com/farmaster/my/main/master/user-agent.json'
-    useragent = choice(get(url).json()[brower_name])
-    return useragent
-    
-    
 
-       
-def plus(title, content):
-    try:
-        url = 'http://www.pushplus.plus/send'
-        data = {
-            "token": PUSH_TOKEN,
-            "title": title,
-            "content": content
-        }
-        body = json.dumps(data).encode(encoding='utf-8')
-        headers = {'Content-Type': 'application/json'}
-        response = requests.post(url=url, data=body, headers=headers).json()
-        if response['code'] == 200:
-            print('这是一条通知哦，貌似成功了！')
-        else:
-            print('消息发送失败，请检查配置文件！')
-    except Exception as e:
-        print(e)
+def get_ua(brower_name):
+    url = 'https://ghproxy.com/https://github.com/farmaster/-/blob/main/user-agent.json'
+    useragent = choice(get(url).json()[brower_name])
+    return useragent        
         
-def qyw(title, content):
-    url = f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={QYWX_KEY}'
-    headers = {'Content-Type': 'application/json;charset=utf-8'}
-    data = {
-        'msgtype': 'text',
-        'text': {'content': f'{title}\n\n{content}'}
-    }
-    response = requests.post(url=url, data=json.dumps(data), headers=headers, timeout=15).json()
-    if response['errcode'] == 0:
-       print('这是一条通知哦，貌似成功了！')
-    else:
-       print('消息发送失败，请检查配置文件！')
- 
 def randomstr(numb):
     str = ''
     for i in range(numb):
@@ -60,15 +27,11 @@ def get_status():
       'Referer': f'https://aiqicha.baidu.com/m/usercenter/exchangeList?VNK={randomstr(8)}'
     }
     if get(url, headers=headers).json()['data']['AQ03008'] == 1:
-        print('e卡有货')
-        qyw('爱企查E卡监控', '爱企查京东e卡有货')
-        #plus('爱企查E卡监控', '爱企查京东e卡有货')
+        print('京东50E卡有货,正在推送！')
+        os.system("notify '爱企查E卡监控' '京东50E卡有货'")
     else:
-        print('E卡无货')
-        #plus('爱企查E卡监控', '爱企查京东e卡无货')
-        #qyw('爱企查E卡监控', '爱企查京东e卡无货')
-        
+        print('京东50E卡无货，已跳过通知推送！')
+       # os.system("notify '爱企查E卡监控' '京东50E卡无货'")
+
 if __name__ == '__main__':
-    PUSH_TOKEN = ''
-    QYWX_KEY = ''
     get_status()
