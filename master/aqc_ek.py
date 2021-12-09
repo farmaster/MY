@@ -1,6 +1,5 @@
 #爱企查京东e卡库存监控
 #调用系统自带推送，适用于青龙面板
-#库地址https://github.com/farmaster/my/blob/main/master/aqc_ek.py
 '''
 cron: 10 * * * *
 new Env('爱企查e卡监控');
@@ -11,21 +10,12 @@ import os
 import json
 import requests
 
-def get_ua(brower_name):
-    url = 'https://ghproxy.com/https://github.com/farmaster/-/blob/main/user-agent.json'
-    useragent = choice(get(url).json()[brower_name])
-    return useragent        
-        
-def randomstr(numb):
-    str = ''
-    for i in range(numb):
-        str = str + choice('abcdefghijklmnopqrstuvwxyz0123456789')
-    return str
-def get_status():
+def start():
     url = 'https://aiqicha.baidu.com/usercenter/getBenefitStatusAjax'
     headers = {
-      'User-Agent': get_ua('Safari'),
-      'Referer': f'https://aiqicha.baidu.com/m/usercenter/exchangeList?VNK={randomstr(8)}'
+      'User-Agent':'Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en) AppleWebKit/522+ (KHTML, like Gecko) Version/3.0.2 Safari/522.12',
+      'Referer': 'https://qiye.baidu.com/usercenter',
+      'Cookie': ''
     }
     if get(url, headers=headers).json()['data']['AQ03008'] == 1:
         print('京东50E卡有货,正在推送！')
@@ -35,4 +25,4 @@ def get_status():
        # os.system("notify '爱企查E卡监控' '京东50E卡无货'")
 
 if __name__ == '__main__':
-    get_status()
+    start()
