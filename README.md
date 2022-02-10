@@ -4,11 +4,11 @@
 
 	不包含sendNotify:
 
-	ql repo https://github.com/farmaster/my.git "jd_" "hy" "ql|utils"
+	ql repo https://github.com/farmaster/my.git "jd_" "ql|utils"
 
 	包含sendNotify:
 
-	ql repo https://github.com/farmaster/my.git "jd_" "hy" "ql|sendNotify|utils"
+	ql repo https://github.com/farmaster/my.git "jd_" "ql|sendNotify|utils|hy"
 
 
 2.10.3之后版本青龙拉库命令:
