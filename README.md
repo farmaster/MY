@@ -8,7 +8,7 @@
 
 	包含sendNotify:
 
-	ql repo https://github.com/farmaster/my.git "jd_" "ql|sendNotify|utils|hy"
+	ql repo https://github.com/farmaster/my.git "jd_" "hy" "ql|sendNotify|utils"
 
 
 2.10.3之后版本青龙拉库命令:
