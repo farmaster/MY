@@ -20,4 +20,3 @@
 	包含sendNotify:
 
 	ql repo https://github.com/farmaster/my.git "jd_" "hy" "ql|sendNotify|utils|USER_AGENTS|jdCookie|JS_USER_AGENTS"
-	
