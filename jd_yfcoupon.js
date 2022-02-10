@@ -1,6 +1,6 @@
 //59 19 * * * m_jd_yfcoupon.js
 const {Env} = require('./magic');
-const $ = new Env('M运费券提醒');
+const $ = new Env('M运费券过期提醒');
 let yfcoupon_days = process.env.YFCOUPON_DAYS ? process.env.YFCOUPON_DAYS * 1 : 3
 $.logic = async function () {
     let list = await queryjdcouponlistwithfinance();
